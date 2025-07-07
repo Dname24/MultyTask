@@ -1,12 +1,12 @@
-# MultyTask - Borrador del Proyecto de Aplicación Android
+# Multitask - Borrador del Proyecto de Aplicación Android
 
 ##  Descripción del proyecto
 
-**MultyTask** es una aplicación móvil desarrollada para Android que ayuda a los usuarios a organizar sus tareas diarias de forma intuitiva, eficiente y accesible. La app busca ofrecer una solución práctica para quienes necesitan gestionar múltiples actividades en un solo lugar, ya sea personales, académicas o laborales.
+**Multitask** es una aplicación Android diseñada para permitir al usuario ejecutar múltiples ventanas o tareas de manera simultánea dentro de la misma interfaz, simulando una experiencia de multitarea similar a la de un sistema operativo de escritorio. La aplicación ofrece un entorno dinámico y organizado donde el usuario puede, por ejemplo, redactar una nota mientras visualiza un calendario o realiza un cálculo, todo sin necesidad de cambiar de aplicación.
 
 ##  Exposición del problema
 
-Muchas personas tienen dificultades para priorizar y gestionar múltiples tareas en sus rutinas diarias. Las aplicaciones existentes suelen enfocarse en tareas simples o carecen de personalización. **MultyTask** se plantea como una solución flexible y moderna que permite al usuario tener control completo de sus actividades con una interfaz amigable y opciones de personalización.
+Los dispositivos móviles suelen limitar al usuario a trabajar con una aplicación a la vez o a funciones limitadas de pantalla dividida. Esto interrumpe el flujo de trabajo cuando se requiere consultar varias herramientas en paralelo. **Multitask** busca ofrecer una solución práctica al permitir la ejecución de múltiples "ventanas flotantes" dentro de una sola aplicación, facilitando así la productividad en contextos móviles.
 
 ##  Plataforma
 
@@ -19,22 +19,23 @@ Muchas personas tienen dificultades para priorizar y gestionar múltiples tareas
 
 ### Interfaz de usuario:
 - Registro e inicio de sesión
-- Panel de tareas organizadas por categorías
-- Recordatorios personalizados
-- Estadísticas de cumplimiento de tareas
+- Escritorio con soporte para múltiples ventanas
+- Acceso rápido a utilidades como notas, calendario, navegador, calculadora
+- Gestión de ventanas abiertas (mover, redimensionar, cerrar)
 
 ### Interfaz de administrador:
-- Gestión de usuarios
-- Administración de categorías predeterminadas
-- Supervisión del uso de la aplicación
+- Gestión de módulos o herramientas disponibles en la app
+- Control de usuarios
+- Configuración avanzada del entorno multitarea
 
-## Funcionalidad
+##  Funcionalidad
 
-- Crear, editar y eliminar tareas
-- Configurar alertas y recordatorios
-- Visualizar progreso y estadísticas semanales
-- Sincronización opcional con calendario del sistema
-- Posibilidad de clasificar tareas por prioridad y etiquetas
+- Múltiples herramientas ejecutables simultáneamente en ventanas
+- Interacción entre ventanas (ej. copiar texto de una nota a un mensaje)
+- Guardado automático del estado de cada ventana
+- Notificaciones y alertas por ventana
+- Personalización de diseño y disposición
+
 
 ##  Repositorio del proyecto
 
