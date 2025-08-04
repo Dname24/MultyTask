@@ -17,7 +17,7 @@ fun NavGraph(navController: NavHostController) {
     NavHost(navController = navController, startDestination = Screen.Login.route) {
         composable(Screen.Login.route) {
             LoginScreen(
-                onLoginSuccess = { /* Aquí puedes navegar a otra pantalla si quieres */ },
+                onLoginSuccess = { },
                 onNavigateToRegister = {
                     navController.navigate(Screen.Register.route)
                 }
@@ -26,7 +26,7 @@ fun NavGraph(navController: NavHostController) {
         composable(Screen.Register.route) {
             RegisterScreen(
                 onRegisterSuccess = {
-                    navController.popBackStack() // o navegar a otra pantalla si se desea
+                    navController.popBackStack()
                 },
                 onNavigateBack = {
                     navController.popBackStack()
