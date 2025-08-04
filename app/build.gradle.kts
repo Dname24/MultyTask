@@ -78,4 +78,8 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
+    implementation("com.google.firebase:firebase-auth-ktx:22.3.0")
 }
+
+apply(plugin = "com.google.gms.google-services")
+

@@ -4,7 +4,7 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-08-04T03:50:09.577089300Z">
+        <DropdownSelection timestamp="2025-08-04T04:13:46.759600600Z">
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\ASUS DIEGO\.android\avd\Pixel_6_Pro.avd" />
