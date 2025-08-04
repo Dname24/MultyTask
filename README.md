@@ -38,4 +38,5 @@ Muchas personas tienen dificultades para priorizar y gestionar múltiples tareas
 
 ##  Repositorio del proyecto
 
+- [Ver el proyecto en GitHub](https://github.com/Dname24/MultyTask)
 - [Ver README en GitHub](https://github.com/Dname24/MultyTask/edit/main/README.md)
