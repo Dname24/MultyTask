@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "617456712807",
+    "project_id": "multytask-199fb",
+    "storage_bucket": "multytask-199fb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:617456712807:android:892e3223430dff915568c2",
+        "android_client_info": {
+          "package_name": "com.multytask"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNZjjsdJlv2eVjaXjqBS1hBbsTyfCzGgM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

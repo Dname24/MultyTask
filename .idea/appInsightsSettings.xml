@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.multytask" />
+                  <option name="mobileSdkAppId" value="1:617456712807:android:892e3223430dff915568c2" />
+                  <option name="projectId" value="multytask-199fb" />
+                  <option name="projectNumber" value="617456712807" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
