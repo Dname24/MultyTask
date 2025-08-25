@@ -1,18 +1,26 @@
 package com.multytask.ui.screens
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 @Composable
 fun RegisterScreen(
     onRegisterSuccess: () -> Unit = {},
     onNavigateBack: () -> Unit
 ) {
+    val context = LocalContext.current
+    val auth = FirebaseAuth.getInstance()
+    val db = FirebaseFirestore.getInstance()
+
     var name by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -77,7 +85,29 @@ fun RegisterScreen(
                 } else if (password != confirmPassword) {
                     errorMessage = "Las contraseñas no coinciden"
                 } else {
-                    onRegisterSuccess()
+                    auth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                val uid = auth.currentUser?.uid
+                                val user = hashMapOf(
+                                    "uid" to uid,
+                                    "nombre" to name,
+                                    "email" to email
+                                )
+
+                                db.collection("usuarios").document(uid!!)
+                                    .set(user)
+                                    .addOnSuccessListener {
+                                        Toast.makeText(context, "Usuario registrado en Firestore", Toast.LENGTH_SHORT).show()
+                                        onRegisterSuccess()
+                                    }
+                                    .addOnFailureListener {
+                                        Toast.makeText(context, "Error al guardar en Firestore", Toast.LENGTH_SHORT).show()
+                                    }
+                            } else {
+                                errorMessage = task.exception?.localizedMessage ?: "Error en el registro"
+                            }
+                        }
                 }
             },
             modifier = Modifier.fillMaxWidth()

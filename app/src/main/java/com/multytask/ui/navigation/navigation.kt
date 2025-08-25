@@ -1,36 +1,51 @@
 package com.multytask.ui.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.multytask.ui.screens.HomeScreen
-import com.multytask.ui.screens.LoginScreen
-import com.multytask.ui.screens.RegisterScreen
-
-sealed class Screen(val route: String) {
-    object Login : Screen("login")
-    object Register : Screen("register")
-    object Home : Screen("home")
-}
+import com.multytask.ui.screens.*
+import com.multytask.viewmodel.TaskViewModel
 
 @Composable
-fun NavGraph(navController: NavHostController) {
-    NavHost(navController, startDestination = Screen.Login.route) {
-        composable(Screen.Login.route) {
+fun NavGraph(navController: NavHostController, taskViewModel: TaskViewModel = viewModel()) {
+    NavHost(
+        navController = navController,
+        startDestination = "login"
+    ) {
+        composable("login") {
             LoginScreen(
-                onLoginSuccess = { navController.navigate(Screen.Home.route) },
-                onNavigateToRegister = { navController.navigate(Screen.Register.route) }
+                onLoginSuccess = { navController.navigate("task_list") },
+                onNavigateToRegister = { navController.navigate("register") }
             )
         }
-        composable(Screen.Register.route) {
+
+        composable("register") {
             RegisterScreen(
-                onRegisterSuccess = { navController.navigate(Screen.Home.route) },
+                onRegisterSuccess = { navController.navigate("task_list") },
                 onNavigateBack = { navController.popBackStack() }
             )
         }
-        composable(Screen.Home.route) {
-            HomeScreen(onLogout = { navController.popBackStack(Screen.Login.route, inclusive = true) })
+
+        composable("task_list") {
+            TaskListScreen(
+                taskViewModel = taskViewModel,
+                navController = navController,
+                onLogout = {
+                    navController.navigate("login") {
+                        popUpTo("login") { inclusive = true }
+                    }
+                }
+            )
+        }
+
+        composable("add_task") {
+            AddTaskScreen(
+                taskViewModel = taskViewModel,
+                navController = navController,
+                onCancel = { navController.popBackStack() }
+            )
         }
     }
 }
